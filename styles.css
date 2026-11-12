@@ -1,0 +1,82 @@
+h1 {
+    text-align: center;
+}
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+    padding: 16px;
+}
+
+.galeria img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+
+}
+
+.galeria img:hover {
+    transform: scale(1.03);
+}
+
+.foto {
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.foto:hover {
+    opacity: 0.7;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-conteudo {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    animation: zoom 0.6s;
+    max-height: 80vh;
+    object-fit: contain;
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+.fechar {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.fechar:hover,
+.fechar:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
